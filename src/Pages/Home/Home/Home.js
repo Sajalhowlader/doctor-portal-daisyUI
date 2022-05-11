@@ -7,6 +7,7 @@ import Services from '../Services/Services';
 import Exceptional from '../Exceptional/Exceptional';
 import Appointment from '../Appointment/Appointment';
 import Testimonial from '../Testimonial/Testimonial';
+import Patients from '../Patients/Patients';
 const Home = () => {
     return (
         <div>
@@ -70,6 +71,7 @@ const Home = () => {
             <Exceptional />
             <Appointment />
             <Testimonial />
+            <Patients />
         </div>
     );
 };
