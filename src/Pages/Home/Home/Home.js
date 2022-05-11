@@ -8,7 +8,7 @@ const Home = () => {
         <div className='container mx-auto'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-40">
-                    <img src={chair} alt="" className=" rounded-lg shadow-2xl w-2/5" />
+                    <img src={chair} alt="" class="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h2 className="text-4xl font-bold">Your New Smile Starts
                             <br />
@@ -22,12 +22,36 @@ const Home = () => {
             </div>
 
 
-            <div className=" mt-3">
-                <div className='grid grid-cols-3'>
-                    <div class="card  bg-accent shadow-xl py-3 text-white">
+            <div className="w-11/12 mx-auto mt-20">
+                <div className='grid md:grid-cols-3 sm:gird-cols-1 gap-8'>
+                    <div class="card  bg-gradient-to-r from-primary to-secondary shadow-xl py-3 text-white">
                         <div class="card-body d-flex flex-row items-center">
                             <div>
                                 <img src={clock} alt="" />
+                            </div>
+                            <div className='ml-5'>
+                                <h2 class="card-title">Opening Hours</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card  bg-accent shadow-xl py-3 text-white">
+                        <div class="card-body d-flex flex-row items-center">
+                            <div>
+                                <img src={location} alt="" />
+                            </div>
+                            <div className='ml-5'>
+                                <h2 class="card-title">Opening Hours</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card  bg-gradient-to-r from-primary to-secondary shadow-xl py-3 text-white">
+                        <div class="card-body d-flex flex-row items-center">
+                            <div>
+                                <img src={call} alt="" />
                             </div>
                             <div className='ml-5'>
                                 <h2 class="card-title">Opening Hours</h2>
