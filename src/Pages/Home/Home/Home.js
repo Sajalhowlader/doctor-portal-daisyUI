@@ -3,6 +3,7 @@ import chair from '../../../assets/images/chair.png'
 import clock from '../../../assets/icons/clock.svg'
 import location from '../../../assets/icons/marker.svg'
 import call from '../../../assets/icons/phone.svg'
+import Services from '../Services/Services';
 const Home = () => {
     return (
         <div className='container mx-auto'>
@@ -62,7 +63,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
+            <Services />
         </div>
     );
 };
