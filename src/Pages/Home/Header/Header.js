@@ -12,7 +12,7 @@ const Header = () => {
     </>
     return (
         <nav className="nav-color bg-cyan-900">
-            <div className='mx-auto'>
+            <div className="container mx-auto">
                 <div className="navbar ">
                     <div className="navbar-start">
                         <div className="dropdown">

@@ -5,11 +5,12 @@ import location from '../../../assets/icons/marker.svg'
 import call from '../../../assets/icons/phone.svg'
 import Services from '../Services/Services';
 import Exceptional from '../Exceptional/Exceptional';
+import Appointment from '../Appointment/Appointment';
 const Home = () => {
     return (
-        <div className=' mx-auto'>
+        <div>
             <div className="hero min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse gap-40">
+                <div className="hero-content flex-col lg:flex-row-reverse gap-x-56 gap-y-16">
                     <img src={chair} alt="" className="max-w-full md:max-w-sm rounded-lg shadow-2xl " />
                     <div>
                         <h2 className="text-5xl font-bold">Your New Smile Starts
@@ -66,6 +67,7 @@ const Home = () => {
             </div>
             <Services />
             <Exceptional />
+            <Appointment />
         </div>
     );
 };

@@ -5,12 +5,15 @@ import Home from './Pages/Home/Home/Home';
 
 function App() {
   return (
-    <div className="container mx-auto">
+    <div>
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='home' element={<Home />} />
-      </Routes>
+      <div className="container mx-auto">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='home' element={<Home />} />
+        </Routes>
+      </div>
+
     </div>
   );
 }
