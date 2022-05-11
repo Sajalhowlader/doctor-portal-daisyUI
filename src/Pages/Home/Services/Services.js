@@ -11,26 +11,26 @@ const Services = () => {
             </div>
 
             <div className="services-info mt-20 grid md:grid-cols-3 sm:grid-cols-1">
-                <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <div className="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={imgOne} alt="Shoes" /></figure>
-                    <div class="card-body justify-center items-center">
-                        <h2 class="card-title">Fluoride Treatment</h2>
+                    <div className="card-body justify-center items-center">
+                        <h2 className="card-title">Fluoride Treatment</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
 
                     </div>
                 </div>
-                <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <div className="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={imgTwo} alt="Shoes" /></figure>
-                    <div class="card-body justify-center items-center">
-                        <h2 class="card-title">Cavity Filling</h2>
+                    <div className="card-body justify-center items-center">
+                        <h2 className="card-title">Cavity Filling</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
 
                     </div>
                 </div>
-                <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <div className="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={imgThree} alt="Shoes" /></figure>
-                    <div class="card-body justify-center items-center">
-                        <h2 class="card-title">Teeth Whitening</h2>
+                    <div className="card-body justify-center items-center">
+                        <h2 className="card-title">Teeth Whitening</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
 
                     </div>

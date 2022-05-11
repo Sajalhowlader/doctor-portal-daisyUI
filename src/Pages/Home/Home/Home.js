@@ -4,17 +4,18 @@ import clock from '../../../assets/icons/clock.svg'
 import location from '../../../assets/icons/marker.svg'
 import call from '../../../assets/icons/phone.svg'
 import Services from '../Services/Services';
+import Exceptional from '../Exceptional/Exceptional';
 const Home = () => {
     return (
-        <div className='container mx-auto'>
+        <div className=' mx-auto'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-40">
-                    <img src={chair} alt="" class="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={chair} alt="" className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
-                        <h2 className="text-4xl font-bold">Your New Smile Starts
+                        <h2 className="text-5xl font-bold">Your New Smile Starts
                             <br />
                             Here</h2>
-                        <p className="py-6">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        <p className="py-6 w-9/12">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                             <br />
                             Lorem Ipsum has been the industry's standard dummy text ever since the.</p>
                         <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary font-bold uppercase text-white">Get Started</button>
@@ -25,37 +26,37 @@ const Home = () => {
 
             <div className="w-11/12 mx-auto mt-20">
                 <div className='grid md:grid-cols-3 sm:gird-cols-1 gap-8'>
-                    <div class="card  bg-gradient-to-r from-primary to-secondary shadow-xl py-3 text-white">
-                        <div class="card-body d-flex flex-row items-center">
+                    <div className="card  bg-gradient-to-r from-primary to-secondary shadow-xl py-3 text-white">
+                        <div className="card-body d-flex flex-row items-center">
                             <div>
                                 <img src={clock} alt="" />
                             </div>
                             <div className='ml-5'>
-                                <h2 class="card-title">Opening Hours</h2>
+                                <h2 className="card-title">Opening Hours</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                             </div>
 
                         </div>
                     </div>
-                    <div class="card  bg-accent shadow-xl py-3 text-white">
-                        <div class="card-body d-flex flex-row items-center">
+                    <div className="card  bg-accent shadow-xl py-3 text-white">
+                        <div className="card-body d-flex flex-row items-center">
                             <div>
                                 <img src={location} alt="" />
                             </div>
                             <div className='ml-5'>
-                                <h2 class="card-title">Opening Hours</h2>
+                                <h2 className="card-title">Opening Hours</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                             </div>
 
                         </div>
                     </div>
-                    <div class="card  bg-gradient-to-r from-primary to-secondary shadow-xl py-3 text-white">
-                        <div class="card-body d-flex flex-row items-center">
+                    <div className="card  bg-gradient-to-r from-primary to-secondary shadow-xl py-3 text-white">
+                        <div className="card-body d-flex flex-row items-center">
                             <div>
                                 <img src={call} alt="" />
                             </div>
                             <div className='ml-5'>
-                                <h2 class="card-title">Opening Hours</h2>
+                                <h2 className="card-title">Opening Hours</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                             </div>
 
@@ -64,6 +65,7 @@ const Home = () => {
                 </div>
             </div>
             <Services />
+            <Exceptional />
         </div>
     );
 };

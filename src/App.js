@@ -5,7 +5,7 @@ import Home from './Pages/Home/Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container mx-auto">
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
