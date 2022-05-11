@@ -6,7 +6,7 @@ const Exceptional = () => {
         <section className='my-10'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row gap-20">
-                    <img src={treatment} alt='' className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={treatment} alt='' className="max-w-full md:max-w-sm rounded-lg shadow-2xl " />
                     <div className=' w-3/6 '>
                         <h1 className="text-4xl font-bold">Exceptional Dental
                             <br />

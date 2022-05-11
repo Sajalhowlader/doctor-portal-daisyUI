@@ -10,7 +10,7 @@ const Home = () => {
         <div className=' mx-auto'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-40">
-                    <img src={chair} alt="" className="max-w-sm rounded-lg shadow-2xl" />
+                    <img src={chair} alt="" className="max-w-full md:max-w-sm rounded-lg shadow-2xl " />
                     <div>
                         <h2 className="text-5xl font-bold">Your New Smile Starts
                             <br />
