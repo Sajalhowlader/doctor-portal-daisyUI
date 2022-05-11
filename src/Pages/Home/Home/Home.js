@@ -6,6 +6,7 @@ import call from '../../../assets/icons/phone.svg'
 import Services from '../Services/Services';
 import Exceptional from '../Exceptional/Exceptional';
 import Appointment from '../Appointment/Appointment';
+import Testimonial from '../Testimonial/Testimonial';
 const Home = () => {
     return (
         <div>
@@ -68,6 +69,7 @@ const Home = () => {
             <Services />
             <Exceptional />
             <Appointment />
+            <Testimonial />
         </div>
     );
 };
