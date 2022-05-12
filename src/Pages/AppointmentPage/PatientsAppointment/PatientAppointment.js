@@ -9,8 +9,8 @@ const PatientAppointment = () => {
         <div>
             <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-x-40 gap-y-20">
-                    <img src={chair} className="md:max-w-sm max-w-full rounded-lg shadow-2xl" alt='' />
-                    <div>
+                    <img src={chair} alt="" className="max-w-full md:max-w-sm rounded-lg shadow-2xl " />
+                    <div className='ff'>
                         <DayPicker
                             mode="single"
                             selected={date}
