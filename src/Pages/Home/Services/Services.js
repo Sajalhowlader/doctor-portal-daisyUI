@@ -11,7 +11,7 @@ const Services = () => {
                     <h1 className='text-4xl'>Services We Provide</h1>
                 </div>
 
-                <div className="services-info mt-20 grid md:grid-cols-3 sm:grid-cols-1 gap-y-16">
+                <div className="services-info mt-20 grid md:grid-cols-3 sm:grid-cols-1 gap-16">
                     <div className="card card-compact  bg-base-100 shadow-xl">
                         <figure><img src={imgOne} alt="Shoes" /></figure>
                         <div className="card-body justify-center items-center">

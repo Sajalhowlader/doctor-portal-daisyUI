@@ -5,7 +5,7 @@ import people3 from '../../../assets/images/people3.png'
 const Patients = () => {
     return (
         <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-10'>
-            <div class="card bg-base-100 shadow-xl ">
+            <div class="card bg-base-100 shadow-xl py-5">
                 <div class="card-body">
                     <p>It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content</p>
 
@@ -23,7 +23,7 @@ const Patients = () => {
 
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl ">
+            <div class="card bg-base-100 shadow-xl py-5 ">
                 <div class="card-body">
                     <p>It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content</p>
 
@@ -41,7 +41,7 @@ const Patients = () => {
 
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl ">
+            <div class="card bg-base-100 shadow-xl py-5 ">
                 <div class="card-body">
                     <p>It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content</p>
 

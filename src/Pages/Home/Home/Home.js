@@ -8,6 +8,7 @@ import Exceptional from '../Exceptional/Exceptional';
 import Appointment from '../Appointment/Appointment';
 import Testimonial from '../Testimonial/Testimonial';
 import Patients from '../Patients/Patients';
+import Contacts from '../Contacts/Contacts';
 const Home = () => {
     return (
         <div>
@@ -72,6 +73,7 @@ const Home = () => {
             <Appointment />
             <Testimonial />
             <Patients />
+            <Contacts />
         </div>
     );
 };
