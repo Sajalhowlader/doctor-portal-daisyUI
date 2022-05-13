@@ -16,6 +16,8 @@ const SingIn = () => {
     const [google, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    let singInError;
+
     const handleGoogleSingIn = () => {
         google()
     }
@@ -30,13 +32,15 @@ const SingIn = () => {
     if (gUser) {
         console.log(gUser);
     }
-
+    if (error || gError) {
+        singInError = <p className='text-red-500 font-bold'>{error?.message || gError?.message}</p>
+    }
 
     return (
         <div>
             <div class="hero min-h-screen ">
                 <div class="hero-content flex-col w-2/5">
-                    <div class="card flex-shrink-0 w-full shadow-2xl bg-base-100">
+                    <div class="card flex-shrink-0 w-full shadow-lg bg-base-100">
                         <h1 className='text-center text-3xl font-bold uppercase pt-4 text-primary'>sing in now</h1>
                         <div class="card-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -94,7 +98,7 @@ const SingIn = () => {
                                     {errors.password?.type === 'minLength' && <p className='text-red-500'>
                                         {errors.password.message}
                                     </p>}
-
+                                    {singInError}
                                     <p className='font-bold  pt-3'>Forget password? <span>Reset Now</span></p>
                                 </div>
 
@@ -102,7 +106,7 @@ const SingIn = () => {
                             </form>
 
 
-                            <p className='font-bold text-center pt-3 '>New to Doctor Portal? <Link to="/home" className='text-sky-800'>Register Now</Link></p>
+                            <p className='font-bold text-center pt-3 '>New to Doctor Portal? <Link to="/singUp" className='text-sky-800'>Register Now</Link></p>
                             <div class="divider">OR</div>
 
                             <button onClick={handleGoogleSingIn} class="btn uppercase font-bold text-white bg-indigo-900"><img src={googleImg} className="w-10" alt="" />continue with</button>

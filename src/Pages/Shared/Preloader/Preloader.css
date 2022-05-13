@@ -1,4 +1,7 @@
 .preloader {
-    background-image: url('../../../assets/icons/preloader.gif');
-    height: 100vh;
+    background-image: url('../../../assets/icons/Comp-2.gif');
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

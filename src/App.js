@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import SingIn from './Pages/UserInfo/SingIn/SingIn';
+import SingUp from './Pages/UserInfo/SingUp/SingUp';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='home' element={<Home />} />
           <Route path='appointment' element={<PatientAppointment />} />
           <Route path='singIn' element={<SingIn />} />
+          <Route path='singUp' element={<SingUp />} />
 
         </Routes>
         <Footer />
