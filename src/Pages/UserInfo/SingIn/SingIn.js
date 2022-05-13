@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import googleImg from '../../../assets/icons/google3.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import Preloader from '../../Shared/Preloader/Preloader';
 const SingIn = () => {
+    const navigate = useNavigate()
     const [
         emailPass,
         user,
@@ -29,8 +30,8 @@ const SingIn = () => {
     if (loading || gLoading) {
         return <Preloader />
     }
-    if (gUser) {
-        console.log(gUser);
+    if (gUser || user) {
+        navigate('/home')
     }
     if (error || gError) {
         singInError = <p className='text-red-500 font-bold'>{error?.message || gError?.message}</p>

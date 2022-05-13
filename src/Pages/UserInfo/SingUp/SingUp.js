@@ -1,23 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import Preloader from '../../Shared/Preloader/Preloader';
+
+import { async } from '@firebase/util';
+
 const SingUp = () => {
+    const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         createUser,
         user,
         loading,
-        error,
+        userError,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const onSubmit = data => {
-        console.log(data);
+    const [updateProfile, updating, error] = useUpdateProfile(auth);
 
+    const onSubmit = async data => {
+        await createUser(data.email, data.password)
+        await updateProfile({ displayName: data.name });
     }
 
-
+    if (user) {
+        navigate("/appointment")
+    }
+    if (loading || updating) {
+        return <Preloader />
+    }
     return (
         <div>
             <div class="hero min-h-screen ">
