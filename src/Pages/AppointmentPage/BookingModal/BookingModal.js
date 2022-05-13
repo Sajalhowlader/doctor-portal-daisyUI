@@ -22,7 +22,7 @@ const BookingModal = ({ treatment, date }) => {
             <input type="checkbox" id="booking-modal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <label for="booking-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label for="booking-modal" class="btn btn-sm btn-circle absolute right-2 top-2 bg-success">✕</label>
                     <h3 class="font-bold text-lg text-primary mb-10">Book For:{name}</h3>
                     <form onSubmit={handleSubmitFrom}>
                         <input name='date' type="text" value={format(date, 'PP')} class="input input-bordered input-success w-full h-9 mb-4 " disabled />
