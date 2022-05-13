@@ -8,7 +8,7 @@ const Header = () => {
         <li><Link to='/appointment' className='font-bold text-neutral'  >APPOINTMENT</Link></li>
         <li><Link to='/reviews' className='font-bold text-neutral'  >REVIEWS</Link></li>
         <li><Link to='/contact' className='font-bold text-neutral'  >CONTACT US</Link></li>
-        <li><Link to='/login' className='font-bold text-neutral'  >LOGIN</Link></li>
+        <li><Link to='/singIn' className='font-bold text-neutral'  >LOGIN</Link></li>
     </>
     return (
         <nav className="nav-color bg-cyan-900">

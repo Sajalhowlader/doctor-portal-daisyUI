@@ -12,6 +12,8 @@ const BookingModal = ({ treatment, date }) => {
         const email = e.target.email.value
         const phone = e.target.phone.value
 
+        console.log(date, slot, name, email, phone,);
+
     }
 
 
@@ -40,8 +42,6 @@ const BookingModal = ({ treatment, date }) => {
                         <input type="submit" class=" btn btn-primary input-bordered input-success w-full h-9 mb-2 " />
 
                     </form>
-
-
 
                 </div>
             </div>
