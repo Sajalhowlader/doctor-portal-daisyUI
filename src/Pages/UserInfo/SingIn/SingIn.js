@@ -48,7 +48,7 @@ const SingIn = () => {
     return (
         <div>
             <div className="hero min-h-screen ">
-                <div className="hero-content flex-col w-2/5">
+                <div className="hero-content flex-col w-full lg:w-2/5">
                     <div className="card flex-shrink-0 w-full shadow-lg bg-base-100">
                         <h1 className='text-center text-3xl font-bold uppercase pt-4 text-primary'>sing in now</h1>
                         <div className="card-body">
