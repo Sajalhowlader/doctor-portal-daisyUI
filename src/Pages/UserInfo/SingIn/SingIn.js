@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleImg from '../../../assets/icons/google3.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -25,36 +25,42 @@ const SingIn = () => {
     }
 
     const onSubmit = data => {
-        console.log(data);
+
         emailPass(data.email, data.password)
     }
+    let from = location.state?.from?.pathname || "/";
+    useEffect(() => {
+        if (gUser || user) {
+            navigate(from, { replace: true });
+        }
+    }, [from, navigate, gUser, user])
+
     if (loading || gLoading) {
         return <Preloader />
     }
-    let from = location.state?.from?.pathname || "/";
 
-    if (gUser || user) {
-        navigate(from, { replace: true });
-    }
+
+
+
     if (error || gError) {
         singInError = <p className='text-red-500 font-bold'>{error?.message || gError?.message}</p>
     }
     return (
         <div>
-            <div class="hero min-h-screen ">
-                <div class="hero-content flex-col w-2/5">
-                    <div class="card flex-shrink-0 w-full shadow-lg bg-base-100">
+            <div className="hero min-h-screen ">
+                <div className="hero-content flex-col w-2/5">
+                    <div className="card flex-shrink-0 w-full shadow-lg bg-base-100">
                         <h1 className='text-center text-3xl font-bold uppercase pt-4 text-primary'>sing in now</h1>
-                        <div class="card-body">
+                        <div className="card-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Email</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
                                     </label>
                                     <input
                                         type="email"
                                         placeholder="Your Email"
-                                        class="input input-bordered"
+                                        className="input input-bordered"
                                         {...register("email", {
                                             required: {
                                                 value: true,
@@ -66,23 +72,27 @@ const SingIn = () => {
                                             }
                                         })}
                                     />
-                                </div>
+                                </div >
 
-                                {errors.email?.type === 'required' && <p className='text-red-500'>
-                                    {errors.email.message}
-                                </p>}
-                                {errors.email?.type === 'pattern' && <p className='text-red-500'>
-                                    {errors.email.message}
-                                </p>}
+                                {
+                                    errors.email?.type === 'required' && <p className='text-red-500'>
+                                        {errors.email.message}
+                                    </p>
+                                }
+                                {
+                                    errors.email?.type === 'pattern' && <p className='text-red-500'>
+                                        {errors.email.message}
+                                    </p>
+                                }
 
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Password</span>
-                                    </label>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Password</span >
+                                    </label >
                                     <input
                                         type="password"
                                         placeholder="Your Password"
-                                        class="input input-bordered"
+                                        className="input input-bordered"
                                         {...register("password", {
                                             required: {
                                                 value: true,
@@ -95,29 +105,33 @@ const SingIn = () => {
                                         })}
                                     />
 
-                                    {errors.password?.type === 'required' && <p className='text-red-500'>
-                                        {errors.password.message}
-                                    </p>}
-                                    {errors.password?.type === 'minLength' && <p className='text-red-500'>
-                                        {errors.password.message}
-                                    </p>}
+                                    {
+                                        errors.password?.type === 'required' && <p className='text-red-500'>
+                                            {errors.password.message}
+                                        </p>
+                                    }
+                                    {
+                                        errors.password?.type === 'minLength' && <p className='text-red-500'>
+                                            {errors.password.message}
+                                        </p>
+                                    }
                                     {singInError}
                                     <p className='font-bold  pt-3'>Forget password? <span>Reset Now</span></p>
-                                </div>
+                                </div >
 
-                                <input class="btn btn-primary uppercase font-bold text-white w-full mt-2" value="Sing in" type='submit' />
-                            </form>
+                                <input className="btn btn-primary uppercase font-bold text-white w-full mt-2" value="Sing in" type='submit' />
+                            </form >
 
 
                             <p className='font-bold text-center pt-3 '>New to Doctor Portal? <Link to="/singUp" className='text-sky-800'>Register Now</Link></p>
-                            <div class="divider">OR</div>
+                            <div className="divider" > OR</div >
 
-                            <button onClick={handleGoogleSingIn} class="btn uppercase font-bold text-white bg-indigo-900"><img src={googleImg} className="w-10" alt="" />continue with</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <button onClick={handleGoogleSingIn} className="btn uppercase font-bold text-white bg-indigo-900"><img src={googleImg} className="w-10" alt="" />continue with</button>
+                        </div >
+                    </div >
+                </div >
+            </div >
+        </div >
     );
 };
 

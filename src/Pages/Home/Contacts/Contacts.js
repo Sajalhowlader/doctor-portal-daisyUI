@@ -10,11 +10,11 @@ const Contacts = () => {
 
             <div className=' flex items-center justify-center flex-col lg:w-2/4 w-11/12 mx-auto'>
 
-                <input type="email" placeholder="Email Address" class="input input-bordered w-full mb-3" />
+                <input type="email" placeholder="Email Address" className="input input-bordered w-full mb-3" />
 
-                <input type="text" placeholder="Subject" class="input input-bordered w-full mb-3" />
+                <input type="text" placeholder="Subject" className="input input-bordered w-full mb-3" />
 
-                <textarea type="text" placeholder="Your Message" class="input input-bordered input-lg w-full h-32 mb-6 pl-3" />
+                <textarea type="text" placeholder="Your Message" className="input input-bordered input-lg w-full h-32 mb-6 pl-3" />
                 <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary font-bold uppercase text-white ">Submit</button>
             </div>
         </div>
