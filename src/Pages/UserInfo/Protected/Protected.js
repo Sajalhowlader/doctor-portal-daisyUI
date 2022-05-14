@@ -7,14 +7,18 @@ import Preloader from '../../Shared/Preloader/Preloader';
 const Protected = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     let location = useLocation();
+
+
+    if (loading) {
+        return <Preloader />
+    }
+
     if (!user) {
 
         return <Navigate to="/singIn" state={{ from: location }} replace />;
     }
 
-    if (loading) {
-        return <Preloader />
-    }
+
     return children;
 
 };
