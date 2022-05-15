@@ -8,11 +8,13 @@ import OurService from '../OurService/OurService';
 const AvailableAppointment = ({ date }) => {
     const [services, setServices] = useState([])
     const [treatment, setTreatment] = useState(null)
+
+    const formattedDate = format(date, 'PP')
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch(`http://localhost:5000/available?bookingDate=${formattedDate}`)
             .then(res => res.json())
             .then(data => setServices(data))
-    }, [])
+    }, [formattedDate])
     return (
         <div>
             <h1 className='text-center font-bold text-3xl text-primary mb-8'>Available Appointment:{format(date, 'PP')}</h1>
