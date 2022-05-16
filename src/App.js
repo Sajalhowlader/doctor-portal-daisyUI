@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import PatientAppointment from './Pages/AppointmentPage/PatientsAppointment/PatientAppointment';
+import Dashboard from './Pages/Dashboard/Dashboard';
 
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -20,6 +21,10 @@ function App() {
           <Route path='appointment' element={
             <Protected>
               <PatientAppointment />
+            </Protected>} />
+          <Route path='dashboard' element={
+            <Protected>
+              <Dashboard />
             </Protected>} />
           <Route path='singIn' element={<SingIn />} />
           <Route path='singUp' element={<SingUp />} />

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
-const BookingModal = ({ treatment, date, setTreatment }) => {
+const BookingModal = ({ treatment, date, setTreatment, reface }) => {
     const { _id, name, slots } = treatment
     const dateFormat = format(date, 'PP')
     const [phone, setPhone] = useState(0)
@@ -57,6 +57,8 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
                 } else {
                     alert(`Already an Appointment on ${data.booking?.bookingDate} at ${data.booking?.bookingSlot}`)
                 }
+                setTreatment(null)
+                reface()
             })
     }
 
@@ -67,7 +69,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <label for="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-success">✕</label>
+                    <label for="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2 bg-black">❌</label>
                     <h3 className="font-bold text-lg text-primary mb-10">Book For:{name}</h3>
 
 

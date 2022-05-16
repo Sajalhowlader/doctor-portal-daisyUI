@@ -17,6 +17,8 @@ const Header = () => {
         <li><Link to='/appointment' className='font-bold text-neutral'  >APPOINTMENT</Link></li>
         <li><Link to='/reviews' className='font-bold text-neutral'  >REVIEWS</Link></li>
         <li><Link to='/contact' className='font-bold text-neutral'  >CONTACT US</Link></li>
+        {user && <li><Link to='/dashboard' className='font-bold text-neutral'  >DASHBOARD</Link></li>}
+
         {user ?
             <li onClick={singOut}><p className='font-bold  text-red-500'  >SING OUT</p></li>
             : <li><Link to='/singIn' className='font-bold text-neutral'  >SING IN</Link></li>
