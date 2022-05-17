@@ -7,7 +7,7 @@ import auth from '../../../firebase.init';
 import Preloader from '../../Shared/Preloader/Preloader';
 
 import { async } from '@firebase/util';
-
+let singInError;
 const SingUp = () => {
     const navigate = useNavigate()
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -30,6 +30,9 @@ const SingUp = () => {
     }
     if (loading || updating) {
         return <Preloader />
+    }
+    if (error || userError) {
+        singInError = <p className='text-red-500 font-bold'>{error?.message || userError?.message}</p>
     }
     return (
         <div>
@@ -122,7 +125,7 @@ const SingUp = () => {
                                             {errors.password.message}
                                         </p>
                                     }
-                                    {/* {singInError} */}
+                                    {singInError}
 
                                 </div >
 

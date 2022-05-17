@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import PatientAppointment from './Pages/AppointmentPage/PatientsAppointment/PatientAppointment';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MyAppointment from './Pages/Dashboard/MyAppointment';
+import MyReview from './Pages/Dashboard/MyReview';
 
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -25,7 +27,11 @@ function App() {
           <Route path='dashboard' element={
             <Protected>
               <Dashboard />
-            </Protected>} />
+            </Protected>} >
+            <Route index element={<MyAppointment />} />
+            <Route path='review' element={<MyReview />} />
+
+          </Route>
           <Route path='singIn' element={<SingIn />} />
           <Route path='singUp' element={<SingUp />} />
 
