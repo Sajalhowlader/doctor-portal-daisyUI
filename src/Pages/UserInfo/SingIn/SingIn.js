@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import auth from '../../../firebase.init';
 import Preloader from '../../Shared/Preloader/Preloader';
+import useToken from '../../../hooks/useToken';
 const SingIn = () => {
     const navigate = useNavigate()
     const location = useLocation()
@@ -17,6 +18,7 @@ const SingIn = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [google, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [token] = useToken(gUser || user)
 
     let singInError;
 
@@ -29,11 +31,15 @@ const SingIn = () => {
         emailPass(data.email, data.password)
     }
     let from = location.state?.from?.pathname || "/";
+
+
     useEffect(() => {
-        if (gUser || user) {
+        if (token) {
             navigate(from, { replace: true });
         }
-    }, [from, navigate, gUser, user])
+
+
+    }, [from, token, navigate])
 
     if (loading || gLoading) {
         return <Preloader />

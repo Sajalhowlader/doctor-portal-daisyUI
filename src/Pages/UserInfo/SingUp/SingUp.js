@@ -28,7 +28,7 @@ const SingUp = () => {
         await updateProfile({ displayName: data.name });
     }
 
-    if (user) {
+    if (token) {
         navigate("/appointment")
     }
     if (loading || updating) {

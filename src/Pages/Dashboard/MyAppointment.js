@@ -7,7 +7,12 @@ import Preloader from '../Shared/Preloader/Preloader';
 const MyAppointment = () => {
     const [user] = useAuthState(auth)
 
-    const { data: bookingInfo, isLoading } = useQuery(['booking', user.email], () => fetch(`http://localhost:5000/booking?patientEmail=${user.email}`)
+    const { data: bookingInfo, isLoading } = useQuery(['booking', user.email], () => fetch(`http://localhost:5000/booking?patientEmail=${user.email}`, {
+        method: "GET",
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    })
         .then(res => res.json())
     )
 
