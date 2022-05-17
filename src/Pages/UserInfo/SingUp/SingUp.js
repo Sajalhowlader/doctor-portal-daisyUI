@@ -7,6 +7,7 @@ import auth from '../../../firebase.init';
 import Preloader from '../../Shared/Preloader/Preloader';
 
 import { async } from '@firebase/util';
+import useToken from '../../../hooks/useToken';
 let singInError;
 const SingUp = () => {
     const navigate = useNavigate()
@@ -19,6 +20,8 @@ const SingUp = () => {
     ] = useCreateUserWithEmailAndPassword(auth);
 
     const [updateProfile, updating, error] = useUpdateProfile(auth);
+
+    const [token] = useToken(user)
 
     const onSubmit = async data => {
         await createUser(data.email, data.password)
