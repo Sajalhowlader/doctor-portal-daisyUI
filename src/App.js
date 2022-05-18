@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import PatientAppointment from './Pages/AppointmentPage/PatientsAppointment/PatientAppointment';
+import AllUsers from './Pages/Dashboard/AllUsers';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyAppointment from './Pages/Dashboard/MyAppointment';
 import MyReview from './Pages/Dashboard/MyReview';
@@ -30,6 +31,7 @@ function App() {
             </Protected>} >
             <Route index element={<MyAppointment />} />
             <Route path='review' element={<MyReview />} />
+            <Route path='allUsers' element={<AllUsers />} />
 
           </Route>
           <Route path='singIn' element={<SingIn />} />
