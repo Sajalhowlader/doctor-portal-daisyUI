@@ -11,11 +11,11 @@ const AvailableAppointment = ({ date }) => {
 
     const formattedDate = format(date, 'PP')
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/available?bookingDate=${formattedDate}`)
+    //     fetch(`https://protected-bayou-31346.herokuapp.com/available?bookingDate=${formattedDate}`)
     //         .then(res => res.json())
     //         .then(data => setServices(data))
     // }, [formattedDate])
-    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`http://localhost:5000/available?bookingDate=${formattedDate}`)
+    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`https://protected-bayou-31346.herokuapp.com/available?bookingDate=${formattedDate}`)
         .then(res => res.json())
     )
 

@@ -11,7 +11,7 @@ const MyAppointment = () => {
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
 
-    // const { data: bookingInfo, isLoading } = useQuery(['booking', user.email], () => fetch(`http://localhost:5000/booking?patientEmail=${user.email}`, {
+    // const { data: bookingInfo, isLoading } = useQuery(['booking', user.email], () => fetch(`https://protected-bayou-31346.herokuapp.com/booking?patientEmail=${user.email}`, {
     //     method: "GET",
     //     headers: {
     //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -22,7 +22,7 @@ const MyAppointment = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?patientEmail=${user.email}`, {
+            fetch(`https://protected-bayou-31346.herokuapp.com/booking?patientEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -62,7 +62,7 @@ const MyAppointment = () => {
 
 
 
-    //     const {data:services, isLoading, refetch} = useQuery(['available',formattedDate],()=>fetch(`http://localhost:5000/available?bookingDate=${formattedDate}`)
+    //     const {data:services, isLoading, refetch} = useQuery(['available',formattedDate],()=>fetch(`https://protected-bayou-31346.herokuapp.com/available?bookingDate=${formattedDate}`)
     //     .then(res => res.json())
     //  )
 

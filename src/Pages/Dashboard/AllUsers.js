@@ -3,7 +3,7 @@ import { useQuery, } from 'react-query'
 import Preloader from '../Shared/Preloader/Preloader';
 
 const AllUsers = () => {
-    const { data: allUsers, isLoading, refetch } = useQuery(['user'], () => fetch('http://localhost:5000/user', {
+    const { data: allUsers, isLoading, refetch } = useQuery(['user'], () => fetch('https://protected-bayou-31346.herokuapp.com/user', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
@@ -14,7 +14,7 @@ const AllUsers = () => {
     }
 
     const makeAdmin = (email) => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://protected-bayou-31346.herokuapp.com/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

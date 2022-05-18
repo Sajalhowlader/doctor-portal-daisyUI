@@ -42,7 +42,7 @@ const BookingModal = ({ treatment, date, setTreatment, reface }) => {
             patientNumber: phone
 
         }
-        fetch('http://localhost:5000/booking', {
+        fetch('https://protected-bayou-31346.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
