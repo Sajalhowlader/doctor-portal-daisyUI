@@ -9,7 +9,9 @@ const AllUsers = () => {
         }
     }).then(res => res.json()))
 
-
+    if (isLoading) {
+        return <Preloader />
+    }
 
     const makeAdmin = (email) => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -18,17 +20,20 @@ const AllUsers = () => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    alert("You are not an admin you can't make an admin")
+                }
+                return res.json()
+            })
             .then(data => {
-                if (data) {
+                if (data.modifiedCount > 0) {
                     alert('admin add successfully')
                     refetch()
                 }
             })
     }
-    if (isLoading) {
-        return <Preloader />
-    }
+
     console.log(allUsers);
     return (
         <div>

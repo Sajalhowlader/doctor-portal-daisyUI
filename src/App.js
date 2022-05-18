@@ -10,6 +10,7 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import Protected from './Pages/UserInfo/Protected/Protected';
+import RequireAdmin from './Pages/UserInfo/RequireAdmin/RequireAdmin';
 import SingIn from './Pages/UserInfo/SingIn/SingIn';
 import SingUp from './Pages/UserInfo/SingUp/SingUp';
 
@@ -31,7 +32,9 @@ function App() {
             </Protected>} >
             <Route index element={<MyAppointment />} />
             <Route path='review' element={<MyReview />} />
-            <Route path='allUsers' element={<AllUsers />} />
+            <Route path='allUsers' element={<RequireAdmin>
+              <AllUsers />
+            </RequireAdmin>} />
 
           </Route>
           <Route path='singIn' element={<SingIn />} />
